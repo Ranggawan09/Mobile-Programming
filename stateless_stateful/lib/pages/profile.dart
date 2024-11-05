@@ -9,21 +9,21 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBar(
         leading: SizedBox(),
         title: Text("PAGE PROFILE"),
-  ),
-  body: Center(
-  child: Column (
-  mainAxisAlignment: MainAxisAlignment.center,
-  children: [
-  Text("INI HALAMAN PROFILE"),
-  ElevatedButton(
-  onPressed: () {
-  Navigator.of(context).pop();
-  },
-  child: Text("<<< BACK"),
-  ),
-  ],
-  ),
-  ),
-  );
+      ),
+      body: Center(
+        child: Column (
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("INI HALAMAN PROFILE"),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                },
+              child: Text("<<< BACK"),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
