@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -52,17 +51,16 @@ class HomePage extends StatelessWidget {
               );
             } else {
               return ListView.builder(
-                  itemCount: allUser.length,
-                  itemBuilder: (context, index) => ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: Colors.grey[300],
-                      backgroundImage: NetworkImage(allUser[index]['avatar']),
-                    ),
-                    title: Text(
-                        "${allUser[index]['first_name']} ${allUser[index]['last_name']}"
-                    ),
-                    subtitle: Text("${allUser[index]['email']}"),
+                itemCount: allUser.length,
+                itemBuilder: (context, index) => ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.grey[300],
+                    backgroundImage: NetworkImage(allUser[index]['avatar']),
                   ),
+                  title: Text(
+                      "${allUser[index]['first_name']} ${allUser[index]['last_name']}"),
+                  subtitle: Text("${allUser[index]['email']}"),
+                ),
               );
             }
           }),
