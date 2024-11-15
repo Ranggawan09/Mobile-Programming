@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:avatar_glow/avatar_glow.dart';
-import 'package:package_flutter/pages/home.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super (key: key);
-  
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,3 +43,4 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+

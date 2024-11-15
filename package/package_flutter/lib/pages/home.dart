@@ -18,17 +18,16 @@ class _HomePagepageState extends State<HomePage> {
     List<Widget> widgets = [
       ListView.builder(
         itemCount: 50,
-        itemBuilder: (context, index) =>
-            ListTile(
-              leading: CircleAvatar(
-                backgroundColor: Colors.grey[300],
-                backgroundImage:
+        itemBuilder: (context, index) => ListTile(
+          leading: CircleAvatar(
+            backgroundColor: Colors.grey[300],
+            backgroundImage:
                 NetworkImage("https://picsum.photos/id/${870 + index}/200/300"),
-              ),
-              title: Text("${faker.person.name()}"),
-              subtitle: Text("${DateFormat.yMMMMEEEEd().add_jms().format(
-                  DateTime.parse(tanggal))}"),
-            ),
+          ),
+          title: Text("${faker.person.name()}"),
+          subtitle: Text(
+              "${DateFormat.yMMMMEEEEd().add_jms().format(DateTime.parse(tanggal))}"),
+        ),
       ),
       Center(
         child: Text("MENU KE 2"),
@@ -44,7 +43,7 @@ class _HomePagepageState extends State<HomePage> {
       ),
     ];
     return Scaffold(
-      appBar:  AppBar(
+      appBar: AppBar(
         title: Text("FAKER"),
       ),
       body: widgets[currentIndex],

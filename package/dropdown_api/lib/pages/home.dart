@@ -12,7 +12,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String? idProv;
-  final String apiKey = "cae2f8ef8cbafc83440b5a8f8fa394dd1ddef4caad4378eb29dfeab6df3d7d80";
+  final String apiKey =
+      "cae2f8ef8cbafc83440b5a8f8fa394dd1ddef4caad4378eb29dfeab6df3d7d80";
 
   // Fungsi untuk mengambil data provinsi dari API
   Future<List<Province>> fetchProvinces(String? filter) async {
@@ -26,11 +27,13 @@ class _HomePageState extends State<HomePage> {
       // Mengubah pengecekan untuk menyesuaikan struktur respons baru
       if (jsonResponse['code'] == "200" && jsonResponse['value'] is List) {
         List jsonData = jsonResponse['value'];
-        List<Province> provinces = jsonData.map((province) => Province.fromJson(province)).toList();
+        List<Province> provinces =
+            jsonData.map((province) => Province.fromJson(province)).toList();
 
         if (filter != null && filter.isNotEmpty) {
-          provinces = provinces.where((province) =>
-              province.name.toLowerCase().contains(filter.toLowerCase()))
+          provinces = provinces
+              .where((province) =>
+                  province.name.toLowerCase().contains(filter.toLowerCase()))
               .toList();
         }
         return provinces;
@@ -45,7 +48,8 @@ class _HomePageState extends State<HomePage> {
   // Fungsi untuk mengambil data kota berdasarkan provinsi yang dipilih
   Future<List<City>> fetchCities(String provinceId, String? filter) async {
     final response = await http.get(
-      Uri.parse('https://api.binderbyte.com/wilayah/kabupaten?api_key=$apiKey&id_provinsi=$provinceId'),
+      Uri.parse(
+          'https://api.binderbyte.com/wilayah/kabupaten?api_key=$apiKey&id_provinsi=$provinceId'),
     );
 
     print("City API Response: ${response.body}");
@@ -56,11 +60,13 @@ class _HomePageState extends State<HomePage> {
       // Mengubah pengecekan untuk menyesuaikan struktur respons baru
       if (jsonResponse['code'] == "200" && jsonResponse['value'] is List) {
         List jsonData = jsonResponse['value'];
-        List<City> cities = jsonData.map((city) => City.fromJson(city)).toList();
+        List<City> cities =
+            jsonData.map((city) => City.fromJson(city)).toList();
 
         if (filter != null && filter.isNotEmpty) {
-          cities = cities.where((city) =>
-              city.name.toLowerCase().contains(filter.toLowerCase()))
+          cities = cities
+              .where((city) =>
+                  city.name.toLowerCase().contains(filter.toLowerCase()))
               .toList();
         }
         return cities;
@@ -102,7 +108,8 @@ class _HomePageState extends State<HomePage> {
               onChanged: (value) {
                 setState(() {
                   selectedProvince = value;
-                  selectedCity = null; // Reset pilihan kota saat provinsi berubah
+                  selectedCity =
+                      null; // Reset pilihan kota saat provinsi berubah
                 });
               },
               dropdownDecoratorProps: DropDownDecoratorProps(
@@ -117,7 +124,8 @@ class _HomePageState extends State<HomePage> {
             // DropdownSearch untuk memilih kota
             if (selectedProvince != null)
               DropdownSearch<City>(
-                asyncItems: (String? filter) => fetchCities(selectedProvince!.id, filter),
+                asyncItems: (String? filter) =>
+                    fetchCities(selectedProvince!.id, filter),
                 itemAsString: (City city) => city.name,
                 compareFn: (City a, City b) => a.id == b.id,
                 popupProps: PopupProps.bottomSheet(

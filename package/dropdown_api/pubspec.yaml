@@ -1,4 +1,4 @@
-name: packageflutter3
+name: dropdown_api
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -30,6 +30,7 @@ environment:
 dependencies:
   dropdown_search: ^5.0.2
   http: ^1.2.2
+  flutter_launcher_icons: ^0.14.1
 
   flutter:
     sdk: flutter
@@ -38,18 +39,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-  flutter_launcher_icons: ^0.14.1
 
-flutter_launcher_icons:
-  android: "launcher_icon"
-  ios: true
-  image_path: "assets/icon/icon.png"
-  min_sdk_android: 21 # android min sdk min:16, default 21
-  web:
-    generate: true
-    image_path: "assets/icon/icon.png"
-    background_color: "#hexcode"
-    theme_color: "#hexcode"
 
 dev_dependencies:
   flutter_test:

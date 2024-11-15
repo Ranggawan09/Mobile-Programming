@@ -34,13 +34,13 @@ class _HomePageState extends State<HomePage> {
     if (filter == null || filter.isEmpty) {
       return CountryList;
     }
-    return CountryList
-        .where((Country) => Country.name.toLowerCase().contains(filter.toLowerCase()))
-        .toList();
+    return CountryList.where((Country) =>
+        Country.name.toLowerCase().contains(filter.toLowerCase())).toList();
   }
 
   // Pembuat item popup
-  Widget CountryModelPopupItem(BuildContext context, CountryModel item, bool isSelected, bool isHighlighted) {
+  Widget CountryModelPopupItem(BuildContext context, CountryModel item,
+      bool isSelected, bool isHighlighted) {
     return ListTile(
       title: Text(item.name),
       selected: isSelected,
@@ -66,8 +66,7 @@ class _HomePageState extends State<HomePage> {
             decoration: InputDecoration(
               labelText: 'Country *',
               filled: true,
-              fillColor:
-              Theme.of(context).inputDecorationTheme.fillColor,
+              fillColor: Theme.of(context).inputDecorationTheme.fillColor,
             ),
           ),
         ),
